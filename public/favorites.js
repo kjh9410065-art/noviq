@@ -88,7 +88,8 @@
   }
 
   function getCardInfo(url) {
-    const card = [...document.querySelectorAll('a.card')].find(item => item.getAttribute('href') === url);
+    const card = [...document.querySelectorAll('a.card')]
+      .find(item => item.getAttribute('href') === url && !item.closest('#noviq-favorites-section'));
     if (!card) return null;
     return {
       url,
@@ -197,11 +198,12 @@
     renderFavoriteSection();
     renderRecent();
 
-    // 목록이 비동기로 생성된 뒤에도 새 카드와 상세 페이지 버튼을 놓치지 않습니다.
+    // DOM 변경 감지는 새 카드의 즐겨찾기 이벤트 연결에만 사용합니다.
+    // renderFavoriteSection/renderRecent를 여기서 호출하면 자기 자신이 DOM을 바꿔
+    // MutationObserver를 다시 실행시키는 무한 반복이 발생하므로 호출하지 않습니다.
     const observer = new MutationObserver(() => {
       setupCards();
       setupDetailPage();
-      if (!document.getElementById('noviq-recent') && document.querySelector('a.card')) renderRecent();
     });
     observer.observe(document.body, { childList: true, subtree: true });
   }
