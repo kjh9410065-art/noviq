@@ -14,7 +14,7 @@
 :root{color-scheme:light;--bg:#f5f7fb;--text:#151922;--muted:#667085;--card:#fff;--border:#d9dee8;--primary:#2563eb}
 html.dark{color-scheme:dark;--bg:#0f1115;--text:#f2f4f7;--muted:#98a2b3;--card:#171a21;--border:#353b47;--primary:#4f8cff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif}.wrap{width:min(720px,calc(100% - 24px));margin:auto;padding:28px 0 48px}.tools{display:flex;justify-content:flex-end}.theme,.btn,.link{border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);padding:11px 14px;font-weight:800;cursor:pointer}.brand{margin-top:22px;font-size:14px;font-weight:900;letter-spacing:.12em;color:var(--primary)}h1{margin:10px 0 7px;font-size:clamp(30px,8vw,42px)}.sub{margin:0 0 22px;color:var(--muted);font-size:14px}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px}.field label{display:block;margin-bottom:7px;font-size:13px;font-weight:900}.field input{width:100%;padding:14px;border:2px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);font-size:16px}.result{margin-top:16px;display:grid;gap:10px}.item{padding:16px;border-radius:14px;background:var(--bg);border:1px solid var(--border)}.label{font-size:12px;color:var(--muted);font-weight:800}.big{margin-top:4px;font-size:28px;font-weight:900}.detail{margin-top:4px;color:var(--muted);font-size:13px}.actions{display:flex;margin-top:12px}.actions>*{flex:1}.links{display:flex;gap:8px;margin-top:12px}.link{text-align:center;text-decoration:none}.notice{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.6}.ad-slot{min-height:90px;margin:18px 0;border:1px dashed var(--border);border-radius:14px;background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;letter-spacing:.05em}
-</style>
+</style><style>.info-section{margin-top:16px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:18px}.info-section h2{margin:0 0 12px;font-size:20px}.info-section p{margin:9px 0;color:var(--muted);line-height:1.75;font-size:14px}.info-section strong{color:var(--text)}</style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"나이 계산기 | Noviq","url":"https://noviq.tcflick.com/age.html","description":"생년월일을 입력하면 만 나이와 다음 생일까지 남은 날짜를 계산합니다."},{"@type":"SoftwareApplication","name":"나이 계산기 | Noviq","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","url":"https://noviq.tcflick.com/age.html","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}]}</script>
 
@@ -44,6 +44,7 @@ html.dark{color-scheme:dark;--bg:#0f1115;--text:#f2f4f7;--muted:#98a2b3;--card:#
 </section>
 <div class="ad-slot" aria-label="광고 영역">광고 영역</div>
 <div class="links"><a class="link" href="/calculator-list.html">계산기 목록</a><a class="link" href="/dday.html">D-day 계산기</a></div>
+<section class="info-section"><h2>만 나이 계산 기준</h2><p>생년월일과 오늘의 연·월·일을 비교해 올해 생일이 지났는지 반영하여 만 나이를 계산합니다. 미래의 생년월일은 계산하지 않습니다.</p><p>다음 생일도 함께 계산해 해당 날짜까지 남은 일수를 확인할 수 있습니다.</p></section>
 <p class="notice">※ 만 나이는 생일이 지났는지를 반영해 계산합니다. 미래의 생년월일은 계산하지 않습니다.</p>
 </main>
 <script>
