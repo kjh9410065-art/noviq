@@ -1,0 +1,84 @@
+name: Apply Yandex ads
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    # Yandex 광고 패치 커밋에는 다시 실행하지 않아 무한 커밋을 막습니다.
+    if: ${{ !contains(github.event.head_commit.message, '[yandex-ads]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      # 저장소의 최신 파일을 가져옵니다.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 모든 HTML 페이지에 Yandex 광고 로더와 승인된 광고 단위를 추가합니다.
+      - name: Add Yandex ads to all HTML pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path("public")
+          block_id = "R-A-20181655-1"
+          changed = 0
+
+          loader = f'''<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+          <script>window.yaContextCb = window.yaContextCb || [];</script>
+          <!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+          <script src="https://yandex.ru/ads/system/context.js" async></script>
+          '''
+
+          ad_unit = f'''<!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+          <div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+            <div id="yandex_rtb_{block_id}"></div>
+          </div>
+          <script>
+          /* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+          window.yaContextCb = window.yaContextCb || [];
+          window.yaContextCb.push(() => {{
+            Ya.Context.AdvManager.render({{
+              "blockId": "{block_id}",
+              "renderTo": "yandex_rtb_{block_id}"
+            }})
+          }})
+          </script>
+          '''
+
+          for path in sorted(root.glob("*.html")):
+              text = path.read_text(encoding="utf-8")
+              original = text
+
+              # 이미 같은 Yandex 광고 블록이 있으면 중복으로 추가하지 않습니다.
+              if block_id not in text:
+                  # 광고 로더를 head 안에 추가합니다.
+                  if "https://yandex.ru/ads/system/context.js" not in text:
+                      text = text.replace("</head>", loader + "</head>", 1)
+
+                  # 승인된 광고 단위를 body 끝에 추가합니다.
+                  text = text.replace("</body>", ad_unit + "</body>", 1)
+
+              if text != original:
+                  path.write_text(text, encoding="utf-8")
+                  changed += 1
+
+          print(f"Yandex ads added to {changed} HTML pages.")
+          PY
+
+      # 변경된 HTML을 저장소에 반영합니다.
+      - name: Commit Yandex ad patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/*.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Enable Yandex ads across NOVIQ [yandex-ads]"
+          git push
