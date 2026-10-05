@@ -21,6 +21,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main class="wrap">
 <div class="top"><div class="brand">NOVIQ</div><button class="theme" id="theme" type="button">🌙 다크모드</button></div>
@@ -50,4 +54,18 @@ function fmt(n){return Number.isFinite(n)?n.toLocaleString('ko-KR',{maximumFract
 function calculate(){const av=Number(a.value),bv=Number(b.value);ratio.textContent=`${fmt(av)} : ${fmt(bv)}`;if(bv===0){decimal.textContent='계산 불가'}else decimal.textContent=fmt(av/bv);const total=av+bv;if(total===0)percent.textContent='계산 불가';else percent.textContent=`${fmt(av/total*100)}%`;if(Number.isInteger(av)&&Number.isInteger(bv)){if(av===0&&bv===0)simple.textContent='0 : 0';else{const g=gcd(av,bv);simple.textContent=`${av/g} : ${bv/g}`}}else simple.textContent='정수 입력 시 표시'}
 a.addEventListener('input',calculate);b.addEventListener('input',calculate);document.getElementById('reset').addEventListener('click',()=>{a.value=2;b.value=3;calculate()});calculate();
 </script><script src="/favorites.js"></script>
-<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">비율 계산 기준</h2><p>두 입력값을 A:B 형태로 비교하고, B가 0이 아닐 때 A÷B로 두 값의 배수를 계산합니다. 두 값의 합을 기준으로 A가 차지하는 비율도 함께 표시합니다.</p><ul><li><strong>비율</strong>: A : B</li><li><strong>배수</strong>: A ÷ B</li><li><strong>구성비</strong>: A ÷ (A+B) × 100</li><li><strong>간단한 정수비</strong>: 두 정수의 최대공약수로 나누어 축약합니다.</li></ul><p>두 값의 의미와 단위가 같은지 확인한 뒤 결과를 사용하세요.</p></section></body></html>
+<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">비율 계산 기준</h2><p>두 입력값을 A:B 형태로 비교하고, B가 0이 아닐 때 A÷B로 두 값의 배수를 계산합니다. 두 값의 합을 기준으로 A가 차지하는 비율도 함께 표시합니다.</p><ul><li><strong>비율</strong>: A : B</li><li><strong>배수</strong>: A ÷ B</li><li><strong>구성비</strong>: A ÷ (A+B) × 100</li><li><strong>간단한 정수비</strong>: 두 정수의 최대공약수로 나누어 축약합니다.</li></ul><p>두 값의 의미와 단위가 같은지 확인한 뒤 결과를 사용하세요.</p></section><!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
+</body></html>

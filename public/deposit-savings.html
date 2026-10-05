@@ -18,6 +18,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main><div class="top"><div class="brand">Noviq</div><button class="theme" id="themeBtn" type="button">🌙</button></div><div class="card"><h1 style="margin:0 0 16px;font-size:24px">예금·적금 계산기</h1><div class="tabs"><button class="active" id="depositTab" type="button">정기예금</button><button id="savingsTab" type="button">적금</button></div><div class="field"><label id="amountLabel" for="amount">예치금</label><input id="amount" type="number" min="0" step="10000" value="10000000" inputmode="numeric"></div><div class="grid"><div class="field"><label for="rate">연 이율 (%)</label><input id="rate" type="number" min="0" step="0.01" value="3" inputmode="decimal"></div><div class="field"><label for="months">기간 (개월)</label><input id="months" type="number" min="1" step="1" value="12" inputmode="numeric"></div></div><div class="result" aria-live="polite"><div class="row"><span>원금</span><strong id="principal">0원</strong></div><div class="row"><span>세전 이자</span><strong id="interest">0원</strong></div><div class="row"><span>이자소득세(14%)</span><strong id="incomeTax">0원</strong></div><div class="row"><span>지방소득세(1.4%)</span><strong id="localTax">0원</strong></div><div class="row"><span>세후 이자</span><strong id="afterInterest">0원</strong></div><div class="row"><span>만기 예상금액</span><strong id="maturity">0원</strong></div></div><div class="actions"><button class="share" id="shareBtn" type="button">결과 공유</button><button class="reset" id="resetBtn" type="button">초기화</button></div><div class="status" id="status" role="status" aria-live="polite"></div>
 <section class="guide"><h2>예금·적금 계산 방법</h2><p>정기예금은 한 번에 예치한 금액을 기준으로 기간과 금리를 반영해 이자를 계산합니다. 적금은 매월 납입하는 금액과 납입 기간을 기준으로 각 회차의 예치기간을 반영한 단순 예상 이자를 계산합니다.</p><h2>입력 항목 안내</h2><ul><li><strong>예치금·월 납입액:</strong> 예금에서는 한 번 맡기는 금액, 적금에서는 매월 납입하는 금액입니다.</li><li><strong>연 이율:</strong> 계산에 적용할 연 이율을 입력합니다.</li><li><strong>기간:</strong> 이자를 계산할 기간을 개월 단위로 입력합니다.</li></ul><p><a href="/calculator-list.html">전체 계산기 보기</a> · <a href="/loan.html">대출이자 계산기</a> · <a href="/salary.html">연봉 실수령액 계산기</a></p></section>
@@ -31,4 +35,18 @@ async function share(){const params=new URLSearchParams({mode,amount:$("amount")
 const q=new URLSearchParams(location.search);if(q.get("mode")==="savings")mode="savings";if(q.has("amount"))$("amount").value=q.get("amount");if(q.has("rate"))$("rate").value=q.get("rate");if(q.has("months"))$("months").value=q.get("months");setMode(mode);$("depositTab").onclick=()=>setMode("deposit");$("savingsTab").onclick=()=>setMode("savings");["amount","rate","months"].forEach(id=>$(id).addEventListener("input",calculate));$("shareBtn").onclick=share;$("resetBtn").onclick=()=>{$("amount").value=10000000;$("rate").value=3;$("months").value=12;history.replaceState(null,"",location.pathname);setMode("deposit")};
 const savedTheme=localStorage.getItem("flick-theme");if(savedTheme==="dark"||(!savedTheme&&matchMedia("(prefers-color-scheme: dark)").matches))document.body.classList.add("dark");$("themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("flick-theme",document.body.classList.contains("dark")?"dark":"light")};
 </script><script src="/favorites.js"></script>
+<!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
 </body></html>

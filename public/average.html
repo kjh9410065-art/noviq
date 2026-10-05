@@ -26,6 +26,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
 <main class="wrap">
@@ -71,5 +75,19 @@ document.getElementById('reset').addEventListener('click',()=>{numbers.value='';
 calculate(false);
 </script>
 <script src="/favorites.js"></script>
-<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">평균 계산 기준</h2><p>입력한 숫자를 각각 하나의 값으로 보고 합계를 숫자의 개수로 나누어 산술평균을 계산합니다.</p><ul><li><strong>합계</strong>: 입력된 숫자를 모두 더한 값</li><li><strong>개수</strong>: 실제로 숫자로 인식된 입력값의 수</li><li><strong>평균</strong>: 합계 ÷ 개수</li></ul><p>빈 항목은 계산에서 제외됩니다. 서로 다른 단위의 값을 섞거나 극단적으로 큰 값이 포함된 경우 평균만으로 전체 특성을 판단하기 어려울 수 있습니다.</p></section></body>
+<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">평균 계산 기준</h2><p>입력한 숫자를 각각 하나의 값으로 보고 합계를 숫자의 개수로 나누어 산술평균을 계산합니다.</p><ul><li><strong>합계</strong>: 입력된 숫자를 모두 더한 값</li><li><strong>개수</strong>: 실제로 숫자로 인식된 입력값의 수</li><li><strong>평균</strong>: 합계 ÷ 개수</li></ul><p>빈 항목은 계산에서 제외됩니다. 서로 다른 단위의 값을 섞거나 극단적으로 큰 값이 포함된 경우 평균만으로 전체 특성을 판단하기 어려울 수 있습니다.</p></section><!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
+</body>
 </html>

@@ -18,6 +18,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main class="wrap"><section class="calculator-context"><div class="context-kicker">CALCULATION GUIDE</div><h2>대출이자 계산 결과를 확인하는 방법</h2><p>입력한 대출 원금·금리·기간·상환방식을 기준으로 예상 상환액을 계산합니다. 실제 금융상품의 금리와 수수료, 중도상환수수료 등은 상품 조건에 따라 달라질 수 있습니다.</p><div class="context-grid"><article><strong>원리금균등</strong><span>매월 같은 금액을 납부하는 방식으로 계산합니다.</span></article><article><strong>원금균등</strong><span>원금을 나누어 상환하므로 초기 이자 부담이 상대적으로 크게 계산됩니다.</span></article><article><strong>계산 전 확인</strong><span>대출기간, 적용금리, 거치기간과 별도 비용이 있는지 실제 상품 조건을 확인하세요.</span></article></div></section><header><button class="theme" id="theme" type="button">🌙 다크모드</button><div class="brand">NOVIQ</div><h1>대출이자 계산기</h1><p class="sub">대출 원금과 금리, 기간을 입력해 월 상환액과 총 이자를 확인하세요.</p></header>
 <div class="ad-slot" aria-label="광고 영역">광고 영역</div>
@@ -31,4 +35,18 @@ const won=v=>Math.round(v).toLocaleString('ko-KR')+'원';const root=document.doc
 function calculate(updateUrl=true){const p=Math.max(0,Number(principal.value)||0),annual=Math.max(0,Number(rate.value)||0),yearsValue=Math.max(1,Math.min(50,Number(years.value)||1));years.value=yearsValue;const n=yearsValue*12,r=annual/100/12,methodValue=method.value;let payment=0,total=0,interest=0;if(methodValue==='equal'){payment=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);total=payment*n;interest=total-p}else{const principalPart=p/n;let balance=p;for(let i=0;i<n;i++){const monthPayment=principalPart+balance*r;total+=monthPayment;balance=Math.max(0,balance-principalPart)}payment=principalPart+p*r;interest=total-p}document.getElementById('resultLabel').textContent=methodValue==='equal'?'월 상환액':'첫 달 월 상환액';document.getElementById('monthly').textContent=won(payment);document.getElementById('total').textContent=won(total);document.getElementById('interest').textContent=won(interest);document.getElementById('details').innerHTML=`<div class="detail"><span>대출 원금</span><strong>${won(p)}</strong></div><div class="detail"><span>연 금리</span><strong>${annual.toFixed(2)}%</strong></div><div class="detail"><span>상환 기간</span><strong>${yearsValue}년 (${n}개월)</strong></div><div class="detail"><span>상환 방식</span><strong>${methodValue==='equal'?'원리금균등':'원금균등'}</strong></div>`;if(updateUrl)syncUrl()}
 function syncUrl(){const q=new URLSearchParams({principal:principal.value,rate:rate.value,years:years.value,method:method.value});history.replaceState(null,'','?'+q.toString())}const q=new URLSearchParams(location.search);['principal','rate','years','method'].forEach(id=>{if(q.has(id))document.getElementById(id).value=q.get(id)});form.addEventListener('submit',e=>{e.preventDefault();calculate()});[principal,rate,years].forEach(el=>el.addEventListener('input',calculate));method.addEventListener('change',calculate);document.querySelectorAll('[data-value]').forEach(b=>b.onclick=()=>{principal.value=b.dataset.value;calculate()});share.onclick=async()=>{syncUrl();try{if(navigator.share)await navigator.share({title:'Noviq - 대출이자 계산기',url:location.href});else await navigator.clipboard.writeText(location.href)}catch(e){}};reset.onclick=()=>{principal.value=100000000;rate.value=4;years.value=30;method.value='equal';history.replaceState(null,'',location.pathname);calculate(false)};calculate();
 </script><script src="/favorites.js"></script>
+<!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
 </body></html>

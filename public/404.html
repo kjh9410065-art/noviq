@@ -27,6 +27,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
   <main>
@@ -35,5 +39,19 @@
     <p>주소가 잘못되었거나 아직 준비되지 않은 페이지입니다.<br>계산기 첫 화면으로 돌아가 주세요.</p>
     <a href="/">Noviq 홈으로 돌아가기</a>
   </main>
+<!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
 </body>
 </html>

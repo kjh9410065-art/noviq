@@ -27,6 +27,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
   <main class="wrap">
@@ -108,5 +112,19 @@
     document.querySelectorAll('input').forEach(input=>input.addEventListener('input',calculate));calculate();
   </script>
 <script src="/favorites.js"></script>
-<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">퍼센트 계산 방법</h2><p>같은 퍼센트라도 무엇을 기준으로 삼는지에 따라 결과가 달라집니다. 이 계산기는 네 가지 대표적인 계산을 구분해 제공합니다.</p><ul><li><strong>몇 %인지</strong>: 기준값 × 퍼센트 ÷ 100</li><li><strong>비율</strong>: 일부값 ÷ 전체값 × 100</li><li><strong>증감률</strong>: (나중 값 − 이전 값) ÷ 이전 값 × 100</li><li><strong>증가·감소 적용</strong>: 기준값 × (1 ± 퍼센트 ÷ 100)</li></ul><p>증감률은 이전 값이 0이면 일반적인 방식으로 계산할 수 없습니다. 금액이나 수치의 단위와 기준 시점을 함께 확인해 결과를 해석하세요.</p></section></body>
+<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">퍼센트 계산 방법</h2><p>같은 퍼센트라도 무엇을 기준으로 삼는지에 따라 결과가 달라집니다. 이 계산기는 네 가지 대표적인 계산을 구분해 제공합니다.</p><ul><li><strong>몇 %인지</strong>: 기준값 × 퍼센트 ÷ 100</li><li><strong>비율</strong>: 일부값 ÷ 전체값 × 100</li><li><strong>증감률</strong>: (나중 값 − 이전 값) ÷ 이전 값 × 100</li><li><strong>증가·감소 적용</strong>: 기준값 × (1 ± 퍼센트 ÷ 100)</li></ul><p>증감률은 이전 값이 0이면 일반적인 방식으로 계산할 수 없습니다. 금액이나 수치의 단위와 기준 시점을 함께 확인해 결과를 해석하세요.</p></section><!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
+</body>
 </html>

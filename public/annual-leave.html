@@ -20,6 +20,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main class="wrap"><header><div class="brand">NOVIQ</div><button class="theme" id="theme" type="button">🌙 다크모드</button><h1>연차수당 계산기</h1><p class="sub">월 통상임금과 미사용 연차를 입력해 예상 금액을 확인하세요.</p></header>
 <div class="ad-slot" aria-label="광고 영역">광고 영역</div>
@@ -39,4 +43,18 @@ const won=v=>Math.round(v).toLocaleString('ko-KR')+'원';const root=document.doc
 function calculate(){const wage=Math.max(0,Number(document.getElementById('wage').value)||0),hours=Math.max(1,Number(document.getElementById('hours').value)||209),dailyHours=Math.max(0.1,Math.min(24,Number(document.getElementById('dailyHours').value)||8)),days=Math.max(0,Number(document.getElementById('days').value)||0);const hourly=wage/hours,daily=hourly*dailyHours,total=daily*days;document.getElementById('result').textContent=won(total);document.getElementById('details').innerHTML=`<div class="row"><span>통상시급</span><strong>${won(hourly)}</strong></div><div class="row"><span>1일 연차수당</span><strong>${won(daily)}</strong></div><div class="row"><span>1일 소정근로시간</span><strong>${dailyHours}시간</strong></div><div class="row"><span>미사용 연차</span><strong>${days}일</strong></div>`}
 document.getElementById('form').onsubmit=e=>{e.preventDefault();calculate()};['wage','hours','dailyHours','days'].forEach(id=>document.getElementById(id).addEventListener('input',calculate));document.getElementById('share').onclick=async()=>{const p=new URLSearchParams({wage:document.getElementById('wage').value,hours:document.getElementById('hours').value,dailyHours:document.getElementById('dailyHours').value,days:document.getElementById('days').value});history.replaceState(null,'','?'+p);const url=location.href;try{if(navigator.share)await navigator.share({title:'Noviq - 연차수당 계산기',url});else await navigator.clipboard.writeText(url)}catch(e){}};document.getElementById('reset').onclick=()=>{document.getElementById('wage').value=3000000;document.getElementById('hours').value=209;document.getElementById('dailyHours').value=8;document.getElementById('days').value=10;history.replaceState(null,'',location.pathname);calculate()};const p=new URLSearchParams(location.search);['wage','hours','dailyHours','days'].forEach(id=>{if(p.has(id))document.getElementById(id).value=p.get(id)});calculate();
 </script><script src="/favorites.js"></script>
+<!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
 </body></html>

@@ -24,6 +24,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main class="wrap">
 <div class="top"><div class="brand">NOVIQ</div><button class="theme" id="theme" type="button">🌙 다크모드</button></div>
@@ -49,4 +53,18 @@ const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';
 function calculate(){const amount=Math.max(0,Number(total.value)||0),count=Math.max(1,Math.floor(Number(people.value)||1));const result=amount/count;perPerson.textContent=money(result);formula.textContent=`${Math.round(amount).toLocaleString('ko-KR')} ÷ ${count}`}
 total.addEventListener('input',calculate);people.addEventListener('input',calculate);document.getElementById('reset').addEventListener('click',()=>{total.value=100000;people.value=4;calculate()});calculate();
 </script><script src="/favorites.js"></script>
-<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">더치페이 계산 기준</h2><p>총 금액을 참여 인원수로 나누어 1인당 동일 부담액을 계산합니다.</p><ul><li><strong>1인 부담액</strong> = 총 금액 ÷ 인원수</li><li>원 단위 결과는 화면 표시 과정에서 반올림합니다.</li></ul><p>실제 정산에서 1원 단위의 나머지가 발생하면 누가 부담할지 별도로 정해야 합니다. 음식별 주문 금액이나 사람별 할인 등을 반영한 개별 정산은 이 계산기의 동일 분담 방식과 다릅니다.</p></section></body></html>
+<section class="info-section" aria-labelledby="guide-title"><h2 id="guide-title">더치페이 계산 기준</h2><p>총 금액을 참여 인원수로 나누어 1인당 동일 부담액을 계산합니다.</p><ul><li><strong>1인 부담액</strong> = 총 금액 ÷ 인원수</li><li>원 단위 결과는 화면 표시 과정에서 반올림합니다.</li></ul><p>실제 정산에서 1원 단위의 나머지가 발생하면 누가 부담할지 별도로 정해야 합니다. 음식별 주문 금액이나 사람별 할인 등을 반영한 개별 정산은 이 계산기의 동일 분담 방식과 다릅니다.</p></section><!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
+</body></html>

@@ -16,6 +16,10 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
+<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
+<script>window.yaContextCb = window.yaContextCb || [];</script>
+<!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body><main class="wrap"><div class="tools"><button class="theme" id="theme" type="button">🌙 다크모드</button></div><div class="brand">NOVIQ</div><h1>계산기 모음</h1><p class="sub">원하는 계산기를 검색하거나 카테고리로 빠르게 찾아보세요.</p><div class="ad-slot" aria-label="광고 영역">광고 영역</div><input class="search" id="search" type="search" placeholder="🔍 계산기 검색" aria-label="계산기 검색"><div class="filters" id="filters" role="group" aria-label="계산기 카테고리"></div><p class="count" id="count">계산기를 불러오는 중...</p><section class="grid" id="grid" aria-label="계산기 목록"></section><div class="ad-slot" aria-label="광고 영역">광고 영역</div><div class="empty" id="empty">검색 조건에 맞는 계산기가 없습니다.</div></main>
 <script>
@@ -26,4 +30,18 @@ async function load(){try{const response=await fetch('/calculators.json',{cache:
 function renderFilters(){filters.innerHTML='';const categories=['전체',...new Set(calculators.map(item=>item.category))];categories.forEach(category=>{const button=document.createElement('button');button.className='filter'+(category===active?' active':'');button.type='button';button.textContent=category;button.addEventListener('click',()=>{active=category;renderFilters();render()});filters.appendChild(button)})}
 function render(){grid.innerHTML='';const keyword=search.value.trim().toLowerCase();const visible=calculators.filter(item=>{const categoryMatch=active==='전체'||item.category===active;const text=`${item.name} ${item.description} ${item.category}`.toLowerCase();return categoryMatch&&(!keyword||text.includes(keyword))});visible.forEach(item=>{const link=document.createElement('a');link.className='card';link.href=item.url;link.innerHTML=`<div class="category">${item.category}</div><div class="title">${item.name}</div><div class="desc">${item.description}</div><div class="arrow">${item.name} →</div>`;grid.appendChild(link)});count.textContent=`전체 ${calculators.length}개 중 ${visible.length}개 표시`;empty.classList.toggle('show',visible.length===0)}
 search.addEventListener('input',render);load();
-</script><script src="/favorites.js"></script></body></html>
+</script><script src="/favorites.js"></script><!-- Yandex.RTB 광고 단위: 승인된 광고 블록을 페이지 하단에 표시합니다. -->
+<div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
+  <div id="yandex_rtb_R-A-20181655-1"></div>
+</div>
+<script>
+/* 승인된 Yandex 광고 블록을 지정된 영역에 렌더링합니다. */
+window.yaContextCb = window.yaContextCb || [];
+window.yaContextCb.push(() => {
+  Ya.Context.AdvManager.render({
+    "blockId": "R-A-20181655-1",
+    "renderTo": "yandex_rtb_R-A-20181655-1"
+  })
+})
+</script>
+</body></html>
