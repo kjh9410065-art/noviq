@@ -26,7 +26,7 @@
   window.APExceptionBlocks = Array.from(new Set([...(window.APExceptionBlocks || []), "R-A-20181655-1"]));
 </script>
 <!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
-<script src="https://yandex.ru/ads/system/context.js" async></script>
+<script src="https://yandex.ru/ads/system/context.js" async onload="console.info('[NOVIQ Yandex] context.js 로드 완료')" onerror="console.error('[NOVIQ Yandex] context.js 로드 실패')"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M803R1ZV5P"></script>
 <script>
@@ -35,7 +35,7 @@
   gtag('js', new Date());
   gtag('config', 'G-M803R1ZV5P');
 </script>
-<script data-page-id="20181655" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<script data-page-id="20181655" src="https://yandex.ru/ads/system/ap-loader.js" async onload="console.info('[NOVIQ Yandex] ap-loader.js 로드 완료')" onerror="console.error('[NOVIQ Yandex] ap-loader.js 로드 실패')"></script>
 </head>
 <body><main class="wrap"><div class="tools"><button class="theme" id="theme" type="button">🌙 다크모드</button></div><div class="brand">NOVIQ · 노빅</div><h1>계산기 모음</h1><p class="sub">원하는 계산기를 카테고리로 빠르게 찾아보세요.</p><div class="ad-slot yandex-ad-slot" aria-label="Yandex 광고">
   <div id="yandex_rtb_R-A-20181655-1"></div>
