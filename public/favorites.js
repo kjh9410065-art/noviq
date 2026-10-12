@@ -5,10 +5,13 @@
   const MAX_RECENTS = 8;
 
   const read = (key) => {
-    try { return JSON.parse(localStorage.getItem(key) || '[]'); }
+    if(memory.has(key))return memory.get(key);
+    try { const value=JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(value)?value.filter(item=>typeof item==='string'):[]; }
     catch { return []; }
   };
-  const write = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+  // 저장이 제한된 환경에서도 이번 화면의 선택 상태는 유지합니다.
+  const memory = new Map();
+  const write = (key, value) => { memory.set(key,value); try{localStorage.setItem(key, JSON.stringify(value));}catch{} };
   const getFavorites = () => read(FAVORITES_KEY);
   const isFavorite = (url) => getFavorites().includes(url);
 
@@ -74,6 +77,7 @@
       event.preventDefault();
       event.stopPropagation();
       toggleFavorite(url);
+      document.querySelectorAll('a.card').forEach(item=>{if(item.getAttribute('href')===url){const control=item.querySelector('.noviq-favorite');if(control){const active=isFavorite(url);control.textContent=active?'★':'☆';control.classList.toggle('active',active);control.setAttribute('aria-pressed',String(active));}}});
       update();
       renderFavoriteSection();
     });
