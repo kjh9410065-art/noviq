@@ -1,0 +1,25 @@
+{
+  "name": "noviq-apps-in-toss",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "build:ait": "vite build && ait build",
+    "test": "node --test src/calculators.test.mjs"
+  },
+  "dependencies": {
+    "@apps-in-toss/web-framework": "3.8.0",
+    "@emotion/react": "^11.14.0",
+    "@toss/tds-mobile": "2.5.1",
+    "@toss/tds-mobile-ait": "2.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.6",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,46 @@
+name: NOVIQ Apps in Toss bundle
+on:
+  pull_request:
+    paths:
+      - 'toss-app/**'
+      - '.github/workflows/noviq-ait-build.yml'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: toss-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Test calculations
+        run: npm test
+      - name: Generate AIT bundle
+        # 광고 그룹 ID는 콘솔에서 발급된 뒤 GitHub Actions 변수로 등록해요.
+        env:
+          VITE_TOSS_BANNER_AD_GROUP_ID: ${{ vars.NOVIQ_TOSS_BANNER_AD_GROUP_ID }}
+        run: npm run build:ait
+      - name: Validate bundled static paths
+        shell: bash
+        run: |
+          test -f dist/index.html
+          grep -Fq 'src="./assets/' dist/index.html
+          grep -Fq 'href="./assets/' dist/index.html
+      - name: Collect AIT file
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          find . -type f -name '*.ait' -not -path './artifacts/*' -exec cp {} artifacts/ \;
+          test -n "$(find artifacts -type f -name '*.ait' -print -quit)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NOVIQ-Apps-in-Toss-AIT
+          path: toss-app/artifacts/*.ait
+          if-no-files-found: error
