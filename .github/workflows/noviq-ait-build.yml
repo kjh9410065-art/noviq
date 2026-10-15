@@ -24,6 +24,12 @@ jobs:
         run: npm test
       - name: Generate AIT bundle
         run: npm run build:ait
+      - name: Validate bundled static paths
+        shell: bash
+        run: |
+          test -f dist/index.html
+          grep -Fq 'src="./assets/' dist/index.html
+          grep -Fq 'href="./assets/' dist/index.html
       - name: Collect AIT file
         shell: bash
         run: |
