@@ -1,0 +1,2 @@
+import { defineConfig } from '@apps-in-toss/web-framework/config';
+export default defineConfig({appName:'noviq',brand:{displayName:'NOVIQ',primaryColor:'#3182F6',icon:'https://noviq.tcflick.com/favicon.svg'},web:{host:'localhost',port:5173,commands:{dev:'vite --host',build:'vite build'}},permissions:[]});
