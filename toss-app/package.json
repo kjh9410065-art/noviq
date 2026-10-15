@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "build:ait": "granite build",
+    "build:ait": "vite build && ait build",
     "test": "node --test src/calculators.test.mjs"
   },
   "dependencies": {
