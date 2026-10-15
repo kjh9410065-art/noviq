@@ -23,6 +23,9 @@ jobs:
       - name: Test calculations
         run: npm test
       - name: Generate AIT bundle
+        # 광고 그룹 ID는 콘솔에서 발급된 뒤 GitHub Actions 변수로 등록해요.
+        env:
+          VITE_TOSS_BANNER_AD_GROUP_ID: ${{ vars.NOVIQ_TOSS_BANNER_AD_GROUP_ID }}
         run: npm run build:ait
       - name: Validate bundled static paths
         shell: bash
