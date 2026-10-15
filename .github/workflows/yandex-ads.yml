@@ -29,7 +29,7 @@ jobs:
           changed = 0
 
           loader = f'''<!-- Yandex.RTB 공통 로더: 승인된 Yandex 광고 단위가 사용할 콜백 배열을 초기화합니다. -->
-          <script>window.yaContextCb = window.yaContextCb || [];</script>
+          <script>window.yaContextCb = window.yaContextCb || []; window.APExceptionBlocks = Array.from(new Set([...(window.APExceptionBlocks || []), "R-A-20181655-1"]));</script>
           <!-- Yandex.RTB 공통 스크립트를 비동기로 불러옵니다. -->
           <script src="https://yandex.ru/ads/system/context.js" async></script>
           '''
