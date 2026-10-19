@@ -1,31 +1,309 @@
 {
   "brand": "Noviq",
   "calculators": [
-    {"id":"salary","name":"연봉 실수령액 계산기","url":"/salary.html","category":"직장·급여","description":"연봉을 입력하면 월 예상 실수령액을 확인할 수 있습니다.","status":"active"},
-    {"id":"retirement","name":"퇴직금 계산기","url":"/retirement.html","category":"직장·급여","description":"평균임금과 근속기간을 기준으로 예상 퇴직금을 계산합니다.","status":"active"},
-    {"id":"annual-leave","name":"연차수당 계산기","url":"/annual-leave.html","category":"직장·급여","description":"월 통상임금과 미사용 연차를 기준으로 예상 연차수당을 계산합니다.","status":"active"},
-    {"id":"weekly-holiday-pay","name":"주휴수당 계산기","url":"/weekly-holiday-pay.html","category":"직장·급여","description":"주 소정근로시간과 시급을 기준으로 예상 주휴수당을 계산합니다.","status":"active"},
-    {"id":"hourly-wage","name":"시급 계산기","url":"/hourly-wage.html","category":"직장·급여","description":"시급과 근로시간을 기준으로 예상 일급·주급·월급을 계산합니다.","status":"active"},
-    {"id":"loan","name":"대출이자 계산기","url":"/loan.html","category":"금융","description":"대출 원금과 금리, 기간으로 월 상환액과 총 이자를 계산합니다.","status":"active"},
-    {"id":"deposit-savings","name":"예금·적금 계산기","url":"/deposit-savings.html","category":"금융","description":"예금과 적금의 예상 이자와 만기 금액을 계산합니다.","status":"active"},
-    {"id":"compound-interest","name":"복리 계산기","url":"/compound-interest.html","category":"금융","description":"원금과 이율, 기간을 기준으로 월 복리 예상 금액과 이자를 계산합니다.","status":"active"},
-    {"id":"investment-return","name":"투자 수익률 계산기","url":"/investment-return.html","category":"금융","description":"투자 원금과 현재 가치를 기준으로 수익금과 수익률을 계산합니다.","status":"active"},
-    {"id":"vat","name":"부가세 계산기","url":"/vat.html","category":"세금·사업","description":"공급가액 또는 부가세 포함 금액을 기준으로 부가세를 계산합니다.","status":"active"},
-    {"id":"income-tax","name":"종합소득세 계산기","url":"/income-tax.html","category":"세금·사업","description":"종합소득 과세표준을 기준으로 기본세율 산출세액을 계산합니다.","status":"active"},
-    {"id":"percent","name":"퍼센트 계산기","url":"/percent.html","category":"수학","description":"퍼센트, 비율, 증감률, 증가·감소 후 금액을 계산합니다.","status":"active"},
-    {"id":"ratio","name":"비율 계산기","url":"/ratio.html","category":"수학","description":"두 값의 비율과 간단한 정수비를 계산합니다.","status":"active"},
-    {"id":"average","name":"평균 계산기","url":"/average.html","category":"수학","description":"여러 숫자의 합계와 개수, 산술평균을 빠르게 계산합니다.","status":"active"},
-    {"id":"discount","name":"할인율 계산기","url":"/discount.html","category":"생활","description":"상품 가격과 할인율을 기준으로 할인 금액과 최종 가격을 계산합니다.","status":"active"},
-    {"id":"split-bill","name":"더치페이 계산기","url":"/split-bill.html","category":"생활","description":"총 금액과 인원수를 기준으로 1인당 부담 금액을 계산합니다.","status":"active"},
-    {"id":"tip","name":"팁 계산기","url":"/tip.html","category":"생활","description":"결제 금액과 팁 비율을 기준으로 팁과 최종 결제 금액을 계산합니다.","status":"active"},
-    {"id":"date-difference","name":"날짜 차이 계산기","url":"/date-difference.html","category":"날짜·시간","description":"두 날짜 사이의 기간과 일수를 계산합니다.","status":"active"},
-    {"id":"dday","name":"D-day 계산기","url":"/dday.html","category":"날짜·시간","description":"목표 날짜를 입력하면 오늘을 기준으로 D-day를 계산합니다.","status":"active"},
-    {"id":"age","name":"나이 계산기","url":"/age.html","category":"날짜·시간","description":"생년월일을 입력하면 만 나이와 다음 생일까지 남은 날짜를 계산합니다.","status":"active"},
-    {"id":"time-duration","name":"시간 계산기","url":"/time-duration.html","category":"날짜·시간","description":"시작 시간과 종료 시간 사이의 경과 시간을 계산합니다.","status":"active"},
-    {"id":"date-add","name":"날짜 더하기·빼기 계산기","url":"/date-add.html","category":"날짜·시간","description":"기준 날짜에 원하는 일수를 더하거나 빼서 결과 날짜를 계산합니다.","status":"active"},
-    {"id":"weekday","name":"요일 계산기","url":"/weekday.html","category":"날짜·시간","description":"날짜를 입력하면 해당 날짜의 요일을 계산합니다.","status":"active"},
-    {"id":"business-days","name":"영업일 계산기","url":"/business-days.html","category":"날짜·시간","description":"주말을 제외하고 기준 날짜에서 원하는 영업일만큼 이동합니다.","status":"active"},
-    {"id":"time-sum","name":"시간 합산 계산기","url":"/time-sum.html","category":"날짜·시간","description":"여러 개의 시간을 입력해 총 경과 시간을 계산합니다.","status":"active"},
-    {"id":"week-number","name":"주차 계산기","url":"/week-number.html","category":"날짜·시간","description":"날짜를 입력하면 ISO 8601 기준 연도와 주차를 계산합니다.","status":"active"}
+    {
+      "id": "salary",
+      "name": "연봉 실수령액 계산기",
+      "url": "/salary.html",
+      "category": "직장·급여",
+      "description": "연봉을 입력하면 월 예상 실수령액을 확인할 수 있습니다.",
+      "status": "active"
+    },
+    {
+      "id": "retirement",
+      "name": "퇴직금 계산기",
+      "url": "/retirement.html",
+      "category": "직장·급여",
+      "description": "평균임금과 근속기간을 기준으로 예상 퇴직금을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "annual-leave",
+      "name": "연차수당 계산기",
+      "url": "/annual-leave.html",
+      "category": "직장·급여",
+      "description": "월 통상임금과 미사용 연차를 기준으로 예상 연차수당을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "weekly-holiday-pay",
+      "name": "주휴수당 계산기",
+      "url": "/weekly-holiday-pay.html",
+      "category": "직장·급여",
+      "description": "주 소정근로시간과 시급을 기준으로 예상 주휴수당을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "hourly-wage",
+      "name": "시급 계산기",
+      "url": "/hourly-wage.html",
+      "category": "직장·급여",
+      "description": "시급과 근로시간을 기준으로 예상 일급·주급·월급을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "loan",
+      "name": "대출이자 계산기",
+      "url": "/loan.html",
+      "category": "금융",
+      "description": "대출 원금과 금리, 기간으로 월 상환액과 총 이자를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "deposit-savings",
+      "name": "예금·적금 계산기",
+      "url": "/deposit-savings.html",
+      "category": "금융",
+      "description": "예금과 적금의 예상 이자와 만기 금액을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "compound-interest",
+      "name": "복리 계산기",
+      "url": "/compound-interest.html",
+      "category": "금융",
+      "description": "원금과 이율, 기간을 기준으로 월 복리 예상 금액과 이자를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "investment-return",
+      "name": "투자 수익률 계산기",
+      "url": "/investment-return.html",
+      "category": "금융",
+      "description": "투자 원금과 현재 가치를 기준으로 수익금과 수익률을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "vat",
+      "name": "부가세 계산기",
+      "url": "/vat.html",
+      "category": "세금·사업",
+      "description": "공급가액 또는 부가세 포함 금액을 기준으로 부가세를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "income-tax",
+      "name": "종합소득세 계산기",
+      "url": "/income-tax.html",
+      "category": "세금·사업",
+      "description": "종합소득 과세표준을 기준으로 기본세율 산출세액을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "percent",
+      "name": "퍼센트 계산기",
+      "url": "/percent.html",
+      "category": "수학",
+      "description": "퍼센트, 비율, 증감률, 증가·감소 후 금액을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "ratio",
+      "name": "비율 계산기",
+      "url": "/ratio.html",
+      "category": "수학",
+      "description": "두 값의 비율과 간단한 정수비를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "average",
+      "name": "평균 계산기",
+      "url": "/average.html",
+      "category": "수학",
+      "description": "여러 숫자의 합계와 개수, 산술평균을 빠르게 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "discount",
+      "name": "할인율 계산기",
+      "url": "/discount.html",
+      "category": "생활",
+      "description": "상품 가격과 할인율을 기준으로 할인 금액과 최종 가격을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "split-bill",
+      "name": "더치페이 계산기",
+      "url": "/split-bill.html",
+      "category": "생활",
+      "description": "총 금액과 인원수를 기준으로 1인당 부담 금액을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "tip",
+      "name": "팁 계산기",
+      "url": "/tip.html",
+      "category": "생활",
+      "description": "결제 금액과 팁 비율을 기준으로 팁과 최종 결제 금액을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "date-difference",
+      "name": "날짜 차이 계산기",
+      "url": "/date-difference.html",
+      "category": "날짜·시간",
+      "description": "두 날짜 사이의 기간과 일수를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "dday",
+      "name": "D-day 계산기",
+      "url": "/dday.html",
+      "category": "날짜·시간",
+      "description": "목표 날짜를 입력하면 오늘을 기준으로 D-day를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "age",
+      "name": "나이 계산기",
+      "url": "/age.html",
+      "category": "날짜·시간",
+      "description": "생년월일을 입력하면 만 나이와 다음 생일까지 남은 날짜를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "time-duration",
+      "name": "시간 계산기",
+      "url": "/time-duration.html",
+      "category": "날짜·시간",
+      "description": "시작 시간과 종료 시간 사이의 경과 시간을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "date-add",
+      "name": "날짜 더하기·빼기 계산기",
+      "url": "/date-add.html",
+      "category": "날짜·시간",
+      "description": "기준 날짜에 원하는 일수를 더하거나 빼서 결과 날짜를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "weekday",
+      "name": "요일 계산기",
+      "url": "/weekday.html",
+      "category": "날짜·시간",
+      "description": "날짜를 입력하면 해당 날짜의 요일을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "business-days",
+      "name": "영업일 계산기",
+      "url": "/business-days.html",
+      "category": "날짜·시간",
+      "description": "주말을 제외하고 기준 날짜에서 원하는 영업일만큼 이동합니다.",
+      "status": "active"
+    },
+    {
+      "id": "time-sum",
+      "name": "시간 합산 계산기",
+      "url": "/time-sum.html",
+      "category": "날짜·시간",
+      "description": "여러 개의 시간을 입력해 총 경과 시간을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "week-number",
+      "name": "주차 계산기",
+      "url": "/week-number.html",
+      "category": "날짜·시간",
+      "description": "날짜를 입력하면 ISO 8601 기준 연도와 주차를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "rent-conversion",
+      "name": "전월세 전환 계산기",
+      "url": "/rent-conversion.html",
+      "category": "부동산",
+      "description": "보증금 증감에 따른 월세 차이를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "brokerage-fee",
+      "name": "부동산 중개보수 계산기",
+      "url": "/brokerage-fee.html",
+      "category": "부동산",
+      "description": "거래금액과 입력 요율로 중개보수를 추정합니다.",
+      "status": "active"
+    },
+    {
+      "id": "car-cost",
+      "name": "자동차 유지비 계산기",
+      "url": "/car-cost.html",
+      "category": "자동차",
+      "description": "연료비·보험료·자동차세 등 연간 유지비를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "monthly-dividend",
+      "name": "월배당 계산기",
+      "url": "/monthly-dividend.html",
+      "category": "금융",
+      "description": "투자금과 분배율로 예상 월분배금을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "sales-margin",
+      "name": "판매 마진 계산기",
+      "url": "/sales-margin.html",
+      "category": "세금·사업",
+      "description": "원가·수수료·비용을 반영한 판매 순이익을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "break-even",
+      "name": "손익분기점 계산기",
+      "url": "/break-even.html",
+      "category": "세금·사업",
+      "description": "고정비와 공헌이익으로 손익분기 판매량을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "gpa",
+      "name": "학점 계산기",
+      "url": "/gpa.html",
+      "category": "교육",
+      "description": "과목별 학점과 평점의 가중평균을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "appliance-energy",
+      "name": "가전 소비전력 계산기",
+      "url": "/appliance-energy.html",
+      "category": "생활",
+      "description": "소비전력과 사용시간으로 전력량과 비용을 추정합니다.",
+      "status": "active"
+    },
+    {
+      "id": "card-installment",
+      "name": "카드 할부 계산기",
+      "url": "/card-installment.html",
+      "category": "금융",
+      "description": "할부 원금과 수수료율로 납입액을 추정합니다.",
+      "status": "active"
+    },
+    {
+      "id": "salary-increase",
+      "name": "연봉 인상률 계산기",
+      "url": "/salary-increase.html",
+      "category": "직장·급여",
+      "description": "기존 연봉과 변경 연봉의 인상률을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "bmi",
+      "name": "BMI 계산기",
+      "url": "/bmi.html",
+      "category": "건강",
+      "description": "키와 체중으로 체질량지수를 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "unit-converter",
+      "name": "단위 변환 계산기",
+      "url": "/unit-converter.html",
+      "category": "생활",
+      "description": "길이·무게·부피·면적 단위를 변환합니다.",
+      "status": "active"
+    }
   ]
 }
