@@ -68,9 +68,9 @@
       const result=document.getElementById('result');
       const detail=document.getElementById('detail');
       if(hours<15){result.textContent='0원';detail.textContent='주 15시간 미만이므로 일반적인 기준에서는 주휴수당 대상이 아닙니다.';return}
-      const pay=(hours/40)*8*wage;
+      const pay=(Math.min(hours,40)/40)*8*wage;
       result.textContent=Math.round(pay).toLocaleString('ko-KR')+'원';
-      detail.textContent=`계산식: (${hours}시간 ÷ 40시간) × 8시간 × ${wage.toLocaleString('ko-KR')}원`;
+      detail.textContent=`계산식: (최대 40시간 중 ${Math.min(hours,40)}시간 ÷ 40시간) × 8시간 × ${wage.toLocaleString('ko-KR')}원`;
     }
     document.getElementById('calc').addEventListener('click',calculate);
     document.getElementById('hours').addEventListener('input',calculate);
