@@ -30,11 +30,9 @@ html.dark{color-scheme:dark;--bg:#0f1115;--text:#f2f4f7;--muted:#98a2b3;--card:#
 <body><main class="wrap">
 <div class="tools"><button class="theme" id="theme" type="button">🌙 다크모드</button></div><div class="brand">NOVIQ</div>
 <h1>종합소득세 계산기</h1><p class="sub">과세표준을 입력하면 기본세율 기준 산출세액을 계산합니다.</p>
-<div class="ad-slot" aria-label="광고 영역">광고 영역</div>
 <section class="card"><div class="field"><label for="base">종합소득 과세표준</label><input id="base" type="number" min="0" step="10000" value="30000000" inputmode="decimal"></div>
 <div class="result"><div class="row"><span>과세표준</span><strong id="baseResult">30,000,000원</strong></div><div class="row"><span>적용 세율</span><strong id="rateResult">15%</strong></div><div class="row"><span>누진공제</span><strong id="deductionResult">1,260,000원</strong></div><div class="row total"><span>예상 산출세액</span><strong id="taxResult">3,240,000원</strong></div></div>
 <div class="actions"><button class="btn" id="reset" type="button">초기화</button></div></section>
-<div class="ad-slot" aria-label="광고 영역">광고 영역</div>
 <div class="links"><a class="link" href="/calculator-list.html">계산기 목록</a><a class="link" href="/vat.html">부가세 계산기</a></div>
 <p class="notice">※ 국세청 기본세율을 과세표준에 적용한 산출세액 단순 계산입니다. 실제 납부세액은 소득공제·세액공제·감면·가산세·기납부세액 등에 따라 달라집니다.</p>
 </main><script>
