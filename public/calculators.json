@@ -304,6 +304,22 @@
       "category": "생활",
       "description": "길이·무게·부피·면적 단위를 변환합니다.",
       "status": "active"
+    },
+    {
+      "id": "stock-reorder",
+      "name": "재고 발주점 계산기",
+      "url": "/stock-reorder.html",
+      "category": "세금·사업",
+      "description": "일평균 판매량·납기·안전재고를 바탕으로 추가 발주 수량을 계산합니다.",
+      "status": "active"
+    },
+    {
+      "id": "event-budget",
+      "name": "행사 예산 계산기",
+      "url": "/event-budget.html",
+      "category": "생활",
+      "description": "항목별 단가·수량·기타 비용·예비비를 반영해 행사 예상 예산을 계산합니다.",
+      "status": "active"
     }
   ]
 }
